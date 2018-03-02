@@ -1,12 +1,14 @@
 package com.tangqiang.jpcap;
 
-import org.apache.log4j.Logger;
+
 
 import jpcap.JpcapCaptor;
 import jpcap.NetworkInterface;
 import jpcap.NetworkInterfaceAddress;
 import jpcap.packet.Packet;
 import jpcap.packet.TCPPacket;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Jpcap测试
@@ -19,7 +21,7 @@ import jpcap.packet.TCPPacket;
  * 
  */
 public class JpcapTest {
-	private Logger logger = Logger.getLogger(JpcapTest.class);
+	private Logger logger = LoggerFactory.getLogger(JpcapTest.class);
 
 	public static void main(String[] args) {
 		try {
@@ -58,7 +60,7 @@ public class JpcapTest {
 				
 				if (pt instanceof TCPPacket) {
 					TCPPacket tcpp = (TCPPacket) pt;
-					logger.info(tcpp);
+					logger.info(tcpp.toString());
 				}
 			}
 		}

@@ -1,6 +1,5 @@
 package com.tangqiang.sort;
 
-import edu.princeton.cs.introcs.StdIn;
 
 /**
  * java实现堆排序
@@ -54,7 +53,7 @@ public class HeapSort {
 		// while (!StdIn.isEmpty())
 		// a[j++] = StdIn.readInt();
 
-		String[] a = StdIn.readAllStrings();
+		String[] a = args;
 
 		for (int i = 0; i < a.length; i++)
 			System.out.print(a[i] + ",");

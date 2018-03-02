@@ -4,8 +4,10 @@ import javax.crypto.Cipher;
 import javax.crypto.SecretKey;
 import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.DESedeKeySpec;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import org.apache.log4j.Logger;
+
 
 /**
  * 3des(ECB)加解密 md5加密
@@ -21,7 +23,7 @@ import org.apache.log4j.Logger;
  */
 public class ThreeDESTool {
 
-	private Logger log = Logger.getLogger(ThreeDESTool.class); // 日志记录器
+	private Logger log = LoggerFactory.getLogger(ThreeDESTool.class); // 日志记录器
 	private String AlgorithmECB = "DESede/ECB/NoPadding";// 加密方法／运算模式／填充模式
 
 	private String sMasterKey = ""; // 加密主密钥

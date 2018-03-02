@@ -12,7 +12,8 @@ import java.nio.channels.SocketChannel;
 import java.util.Iterator;
 import java.util.Set;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * TODO
@@ -27,7 +28,7 @@ import org.apache.log4j.Logger;
  * @copyright Copyright © 2011-2014 广电运通 All rights reserved.
  */
 public class NioSocketServer {
-	private static Logger logger = Logger.getLogger(NioSocketServer.class);
+	private static Logger logger = LoggerFactory.getLogger(NioSocketServer.class);
 	private static byte[] data = new byte[255];
 
 	public static void main(String[] args) throws IOException {

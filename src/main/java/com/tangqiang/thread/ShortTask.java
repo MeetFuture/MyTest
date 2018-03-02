@@ -6,7 +6,9 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 /**
  * 随机生成6个字符的字符串
@@ -21,7 +23,7 @@ import org.apache.log4j.Logger;
  * @copyright Copyright © 2011-2014 广电运通 All rights reserved.
  */
 public class ShortTask implements Callable<String> {
-	private Logger logger = Logger.getLogger(getClass());
+	private Logger logger = LoggerFactory.getLogger(getClass());
 
 	@Override
 	public String call() throws Exception {

@@ -3,7 +3,8 @@ package com.tangqiang.db.ntdata;
 import java.io.InputStream;
 import java.util.Properties;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
@@ -19,7 +20,7 @@ import com.mchange.v2.c3p0.ComboPooledDataSource;
  *
  */
 public class JdbcFactory {
-	private static Logger logger = Logger.getLogger(JdbcFactory.class); // 日志记录器
+	private static Logger logger = LoggerFactory.getLogger(JdbcFactory.class); // 日志记录器
 	
 	public static JdbcTemplate jdbcTemplate = null;
 	private static ComboPooledDataSource cpds = null;
@@ -51,8 +52,4 @@ public class JdbcFactory {
 		}
 	}
 	
-	public static void main(String[] args) {
-		int i = jdbcTemplate.queryForInt("select count(*) from nt_sent_all");
-		System.out.println(i);
-	}
 }

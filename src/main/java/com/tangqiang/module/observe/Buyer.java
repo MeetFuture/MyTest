@@ -2,8 +2,9 @@ package com.tangqiang.module.observe;
 import java.util.Observable;
 import java.util.Observer;
 
-import org.apache.log4j.Logger;
- 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * 观察者模式 观察者
  *
@@ -15,7 +16,7 @@ import org.apache.log4j.Logger;
  *
  */
 public class Buyer implements Observer{
-	private Logger logger = Logger.getLogger(Buyer.class);
+	private Logger logger = LoggerFactory.getLogger(Buyer.class);
      
     private String name;
      

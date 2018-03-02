@@ -5,11 +5,12 @@ import java.util.Date;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
-import org.apache.log4j.Logger;
+
+import com.tangqiang.db.ntdata.JdbcFactory;
 import org.springframework.jdbc.core.JdbcTemplate;
 
-import com.tangqiang.db.util.JdbcFactory;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 /**
  * 冠字号数据生成
  * 
@@ -23,7 +24,7 @@ import com.tangqiang.db.util.JdbcFactory;
  * @copyright Copyright © 2011-2014 广电运通 All rights reserved.
  */
 public class DataInsert extends Thread {
-	private Logger logger = Logger.getLogger(DataInsert.class);
+	private Logger logger = LoggerFactory.getLogger(DataInsert.class);
 	private JdbcTemplate jdbcTemplate = JdbcFactory.jdbcTemplate;
 
 	private String[] sArrTable = new String[] { "1", "2", "3", "4", "5", "0" };

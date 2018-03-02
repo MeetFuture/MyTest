@@ -3,8 +3,10 @@ package com.tangqiang.thread;
 import java.util.Random;
 import java.util.concurrent.Callable;
 import java.util.concurrent.TimeUnit;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import org.apache.log4j.Logger;
+
 
 /**
  * 长时间任务测试
@@ -19,7 +21,7 @@ import org.apache.log4j.Logger;
  * @copyright Copyright © 2011-2014 广电运通 All rights reserved.
  */
 public class LongTask implements Callable<String> {
-	private Logger logger = Logger.getLogger(getClass());
+	private Logger logger = LoggerFactory.getLogger(getClass());
 
 	@Override
 	public String call() throws Exception {

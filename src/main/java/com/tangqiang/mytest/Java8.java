@@ -1,11 +1,14 @@
 package com.tangqiang.mytest;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-import org.apache.log4j.Logger;
+
 
 /**
  * java8 新特性测试
@@ -18,7 +21,7 @@ import org.apache.log4j.Logger;
  * 
  */
 public class Java8 {
-	private Logger logger = Logger.getLogger(Java8.class);
+	private Logger logger = LoggerFactory.getLogger(Java8.class);
 
 	public static void main(String[] args) {
 		Java8 j = new Java8();

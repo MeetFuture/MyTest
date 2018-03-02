@@ -1,0 +1,134 @@
+<?xml version="1.0" ?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://ws.finda.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="IAtmServiceImplService" targetNamespace="http://ws.finda.com/">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://ws.finda.com/" elementFormDefault="unqualified" targetNamespace="http://ws.finda.com/" version="1.0">
+
+  <xs:element name="kycCheck" type="tns:kycCheck"></xs:element>
+
+  <xs:element name="kycCheckResponse" type="tns:kycCheckResponse"></xs:element>
+
+  <xs:element name="txnFile" type="tns:txnFile"></xs:element>
+
+  <xs:element name="txnFileResponse" type="tns:txnFileResponse"></xs:element>
+
+  <xs:element name="txnResult" type="tns:txnResult"></xs:element>
+
+  <xs:element name="txnResultResponse" type="tns:txnResultResponse"></xs:element>
+
+  <xs:complexType name="kycCheck">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="xml" type="xs:string"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="kycCheckResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="txnResult">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="xml" type="xs:string"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="txnResultResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="txnFile">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="xml" type="xs:string"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="txnFileResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:string"></xs:element>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="txnResultResponse">
+    <wsdl:part element="tns:txnResultResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="txnFileResponse">
+    <wsdl:part element="tns:txnFileResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="kycCheckResponse">
+    <wsdl:part element="tns:kycCheckResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="kycCheck">
+    <wsdl:part element="tns:kycCheck" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="txnFile">
+    <wsdl:part element="tns:txnFile" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="txnResult">
+    <wsdl:part element="tns:txnResult" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="IAtmService">
+    <wsdl:operation name="kycCheck">
+      <wsdl:input message="tns:kycCheck" name="kycCheck">
+    </wsdl:input>
+      <wsdl:output message="tns:kycCheckResponse" name="kycCheckResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="txnResult">
+      <wsdl:input message="tns:txnResult" name="txnResult">
+    </wsdl:input>
+      <wsdl:output message="tns:txnResultResponse" name="txnResultResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="txnFile">
+      <wsdl:input message="tns:txnFile" name="txnFile">
+    </wsdl:input>
+      <wsdl:output message="tns:txnFileResponse" name="txnFileResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="IAtmServiceImplServiceSoapBinding" type="tns:IAtmService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"></soap:binding>
+    <wsdl:operation name="kycCheck">
+      <soap:operation soapAction="" style="document"></soap:operation>
+      <wsdl:input name="kycCheck">
+        <soap:body use="literal"></soap:body>
+      </wsdl:input>
+      <wsdl:output name="kycCheckResponse">
+        <soap:body use="literal"></soap:body>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="txnFile">
+      <soap:operation soapAction="" style="document"></soap:operation>
+      <wsdl:input name="txnFile">
+        <soap:body use="literal"></soap:body>
+      </wsdl:input>
+      <wsdl:output name="txnFileResponse">
+        <soap:body use="literal"></soap:body>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="txnResult">
+      <soap:operation soapAction="" style="document"></soap:operation>
+      <wsdl:input name="txnResult">
+        <soap:body use="literal"></soap:body>
+      </wsdl:input>
+      <wsdl:output name="txnResultResponse">
+        <soap:body use="literal"></soap:body>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="IAtmServiceImplService">
+    <wsdl:port binding="tns:IAtmServiceImplServiceSoapBinding" name="IAtmServiceImplPort">
+      <soap:address location="http://localhost:8080/atmkyc/atmService"></soap:address>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

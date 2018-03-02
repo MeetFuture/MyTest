@@ -4,7 +4,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.UUID;
 
-import org.apache.log4j.Logger;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import com.tangqiang.db.JdbcFactory;
@@ -22,7 +24,7 @@ import com.tangqiang.db.JdbcFactory;
  * @copyright Copyright © 2011-2014 广电运通 All rights reserved.
  */
 public class DataInsert extends Thread {
-	private Logger logger = Logger.getLogger(DataInsert.class);
+	private Logger logger = LoggerFactory.getLogger(DataInsert.class);
 	private JdbcTemplate jdbcTemplate = new JdbcTemplate(JdbcFactory.getDataSource());
 	private int iThread = 0;
 

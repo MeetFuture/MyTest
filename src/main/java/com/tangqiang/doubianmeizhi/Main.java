@@ -6,11 +6,12 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.List;
 import java.util.UUID;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import org.apache.log4j.Logger;
 
 public class Main {
-	private Logger logger = Logger.getLogger(Main.class);
+	private Logger logger = LoggerFactory.getLogger(Main.class);
 
 	public static void main(String[] args) {
 		Main m = new Main();

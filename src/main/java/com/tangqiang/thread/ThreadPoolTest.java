@@ -4,7 +4,9 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 /**
  * 线程池测试
@@ -19,7 +21,7 @@ import org.apache.log4j.Logger;
  * @copyright Copyright © 2011-2014 广电运通 All rights reserved.
  */
 public class ThreadPoolTest {
-	private Logger logger = Logger.getLogger(getClass());
+	private Logger logger = LoggerFactory.getLogger(getClass());
 
 	public static void main(String[] args) {
 		ThreadPoolTest tpt = new ThreadPoolTest();

@@ -5,10 +5,13 @@ import java.text.DecimalFormat;
 
 import javax.swing.filechooser.FileSystemView;
 
-import org.apache.log4j.Logger;
+
+import com.tangqiang.db.ntdata.JdbcFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.jdbc.core.JdbcTemplate;
 
-import com.tangqiang.db.util.JdbcFactory;
+
 
 /**
  * 数据添加
@@ -23,7 +26,7 @@ import com.tangqiang.db.util.JdbcFactory;
  * @copyright Copyright © 2011-2014 广电运通 All rights reserved.
  */
 public class DBCreate {
-	private Logger logger = Logger.getLogger(DBCreate.class);
+	private Logger logger = LoggerFactory.getLogger(DBCreate.class);
 	private JdbcTemplate jdbcTemplate = JdbcFactory.jdbcTemplate;
 
 	public static void main(String[] args) {

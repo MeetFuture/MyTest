@@ -2,11 +2,13 @@ package com.tangqiang.jpcap.arp;
 
 import java.util.concurrent.TimeUnit;
 
-import org.apache.log4j.Logger;
+
 
 import jpcap.JpcapCaptor;
 import jpcap.JpcapSender;
 import jpcap.packet.Packet;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * 包 发送类
@@ -19,7 +21,7 @@ import jpcap.packet.Packet;
  * 
  */
 public class PacketSendThread extends Thread {
-	private Logger logger = Logger.getLogger(PacketSendThread.class);
+	private Logger logger = LoggerFactory.getLogger(PacketSendThread.class);
 	private Packet packet;
 	private long time;
 

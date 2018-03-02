@@ -8,7 +8,8 @@ import java.awt.print.PrinterJob;
 
 import javax.print.PrintService;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * JAVA打印测试
@@ -21,7 +22,7 @@ import org.apache.log4j.Logger;
  * 
  */
 public class PrinterTest {
-	private Logger logger = Logger.getLogger(PrinterTest.class);
+	private Logger logger = LoggerFactory.getLogger(PrinterTest.class);
 
 	public static void main(String[] args) {
 		PrinterTest pt = new PrinterTest();

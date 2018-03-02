@@ -1,12 +1,15 @@
 package com.tangqiang.web;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.ByteArrayOutputStream;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.concurrent.Semaphore;
 
-import org.apache.log4j.Logger;
+
 
 /**
  * 从地址循环获取图片
@@ -21,7 +24,7 @@ import org.apache.log4j.Logger;
  * @copyright Copyright © 2011-2014 广电运通 All rights reserved.
  */
 public class CatchImgTest extends Thread {
-	private Logger logger = Logger.getLogger(CatchImgTest.class);
+	private Logger logger = LoggerFactory.getLogger(CatchImgTest.class);
 	private static int iCountRequest = 0;
 	private static long lBeginTime = 0;
 	private static long lEndTime = 0;

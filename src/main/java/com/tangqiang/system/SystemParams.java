@@ -1,23 +1,27 @@
 package com.tangqiang.system;
 
-import org.apache.log4j.Logger;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import java.util.Properties;
+import java.util.Set;
 
 /**
  * 各种JAVA系统参数
  *
  * @author tqiang
- * @email tqiang@grgbanking.com
- * @file com.tangqiang.system.SystemParams.java 
- * @date 2014-7-2 下午4:58:55
- *
  * @version 1.0  2014-7-2  tqiang  create
- * 
+ * @email tqiang@grgbanking.com
+ * @file com.tangqiang.system.SystemParams.java
+ * @date 2014-7-2 下午4:58:55
  * @copyright Copyright © 2011-2014 广电运通 All rights reserved.
  */
 public class SystemParams {
-	 private Logger logger = Logger.getLogger(SystemParams.class);
-	public static void main(String[] args) {
-		
+    private Logger logger = LoggerFactory.getLogger(SystemParams.class);
+
+    public static void main(String[] args) {
+
 //		java.version                       Java 运行时环境版本
 //		java.vendor                        Java 运行时环境供应商
 //		java.vendor.url                    Java 供应商的 URL
@@ -46,21 +50,24 @@ public class SystemParams {
 //		user.name                          用户的账户名称
 //		user.home                          用户的主目录
 //		user.dir                           用户的当前工作目录 
-		
-		
-		
-		SystemParams sp = new SystemParams();
-		sp.doSys();
-		
-		
-		
-	}
-	
-	
-	private void doSys() {
-		String[] sArrParamKeys = new String[]{"java.version","java.vendor","java.vendor.url","java.home","java.vm.specification.version","java.vm.specification.vendor","java.vm.specification.name","java.vm.version","java.vm.vendor","java.vm.name","java.specification.version","java.specification.vendor","java.specification.name","java.class.version","java.class.path","java.library.path","java.io.tmpdir","java.compiler","java.ext.dirs","os.name","os.arch","os.version","file.separator","path.separator","line.separator","user.name","user.home","user.dir"};
-		for (int i = 0; i < sArrParamKeys.length; i++) {
-			logger.info( sArrParamKeys[i] + "					" + System.getProperty(sArrParamKeys[i]));
-		}
-	}
+
+
+        SystemParams sp = new SystemParams();
+        sp.doSys();
+    }
+
+
+    private void doSys() {
+//        String[] sArrParamKeys = new String[]{"java.version", "java.vendor", "java.vendor.url", "java.home", "java.vm.specification.version", "java.vm.specification.vendor", "java.vm.specification.name", "java.vm.version", "java.vm.vendor", "java.vm.name", "java.specification.version", "java.specification.vendor", "java.specification.name", "java.class.version", "java.class.path", "java.library.path", "java.io.tmpdir", "java.compiler", "java.ext.dirs", "os.name", "os.arch", "os.version", "file.separator", "path.separator", "line.separator", "user.name", "user.home", "user.dir"};
+//        for (int i = 0; i < sArrParamKeys.length; i++) {
+//            logger.info(sArrParamKeys[i] + "					" + System.getProperty(sArrParamKeys[i]));
+//        }
+
+        Properties properties = System.getProperties();
+        Set<Object> keys = properties.keySet();
+        for (Object key : keys) {
+            Object value = properties.get(key);
+            logger.info(key + "					" + value);
+        }
+    }
 }

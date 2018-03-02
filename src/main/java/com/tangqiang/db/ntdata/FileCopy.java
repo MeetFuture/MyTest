@@ -5,8 +5,9 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
-import org.apache.log4j.Logger;
 
 /**
  * sql文件复制
@@ -21,7 +22,7 @@ import org.apache.log4j.Logger;
  * @copyright Copyright © 2011-2014 广电运通 All rights reserved.
  */
 public class FileCopy {
-	private Logger logger = Logger.getLogger(FileCopy.class);
+	private Logger logger = LoggerFactory.getLogger(FileCopy.class);
 	
 	public static void main(String[] args) {
 		FileCopy fc = new FileCopy();

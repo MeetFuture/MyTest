@@ -6,10 +6,11 @@ import java.util.Date;
 import java.util.List;
 import java.util.UUID;
 
-import org.apache.log4j.Logger;
+import com.tangqiang.db.ntdata.JdbcFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.jdbc.core.JdbcTemplate;
 
-import com.tangqiang.db.util.JdbcFactory;
 
 /**
  * TODO
@@ -22,7 +23,7 @@ import com.tangqiang.db.util.JdbcFactory;
  * 
  */
 public class DataInsert extends Thread{
-	private static Logger logger = Logger.getLogger(DataInsert.class);
+	private static Logger logger = LoggerFactory.getLogger(DataInsert.class);
 	private JdbcTemplate jdbcTemplate = JdbcFactory.jdbcTemplate;
 	private static SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 	private static int id = 100000;
