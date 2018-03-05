@@ -25,7 +25,7 @@ import com.tangqiang.db.JdbcFactory;
  */
 public class DataInsert extends Thread {
 	private Logger logger = LoggerFactory.getLogger(DataInsert.class);
-	private JdbcTemplate jdbcTemplate = new JdbcTemplate(JdbcFactory.getDataSource());
+	private JdbcTemplate jdbcTemplate = JdbcFactory.jdbcTemplate;
 	private int iThread = 0;
 
 	private String[] sArrTable = new String[] { "1", "2", "3", "4", "5", "0" };

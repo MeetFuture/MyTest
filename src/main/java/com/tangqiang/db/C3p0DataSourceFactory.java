@@ -11,7 +11,7 @@ import org.slf4j.LoggerFactory;
 import com.mchange.v2.c3p0.ComboPooledDataSource;
 
 /**
- * TODO
+ * C3p0数据源获取
  *
  * @author tqiang
  * @email tqiang@grgbanking.com
@@ -22,8 +22,8 @@ import com.mchange.v2.c3p0.ComboPooledDataSource;
  * 
  * @copyright Copyright © 2011-2015 广电运通 All rights reserved.
  */
-public class C3p0JdbcFactory {
-	private static final Logger logUtil = LoggerFactory.getLogger(C3p0JdbcFactory.class); // 日志记录器
+public class C3p0DataSourceFactory {
+	private static final Logger logUtil = LoggerFactory.getLogger(C3p0DataSourceFactory.class);
 	private static ComboPooledDataSource cpds = null;
 	private static String sPropertiesFile = "/jdbc.properties";
 	public static Properties props = null;
@@ -32,7 +32,7 @@ public class C3p0JdbcFactory {
 		try {
 			// 从文件/conf/jdbc.properties获取数据库连接信息
 			props = new Properties();
-			InputStream inputStream = C3p0JdbcFactory.class.getResourceAsStream(sPropertiesFile);
+			InputStream inputStream = C3p0DataSourceFactory.class.getResourceAsStream(sPropertiesFile);
 			props.load(inputStream);
 			cpds = new ComboPooledDataSource();
 			cpds.setDriverClass(props.getProperty("jdbc.driver"));

@@ -6,7 +6,7 @@ import java.text.DecimalFormat;
 import javax.swing.filechooser.FileSystemView;
 
 
-import com.tangqiang.db.ntdata.JdbcFactory;
+import com.tangqiang.db.JdbcFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.jdbc.core.JdbcTemplate;

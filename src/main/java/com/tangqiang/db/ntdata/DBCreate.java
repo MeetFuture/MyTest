@@ -21,7 +21,7 @@ import java.text.DecimalFormat;
  */
 public class DBCreate {
     private Logger logger = LoggerFactory.getLogger(DBCreate.class);
-    private JdbcTemplate jdbcTemplate = new JdbcTemplate(JdbcFactory.getDataSource());
+    private JdbcTemplate jdbcTemplate = JdbcFactory.jdbcTemplate;
 
     public static void main(String[] args) {
         DBCreate id = new DBCreate();

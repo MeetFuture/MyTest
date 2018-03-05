@@ -6,7 +6,7 @@ import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
 
-import com.tangqiang.db.ntdata.JdbcFactory;
+import com.tangqiang.db.JdbcFactory;
 import org.springframework.jdbc.core.JdbcTemplate;
 
 import org.slf4j.Logger;
